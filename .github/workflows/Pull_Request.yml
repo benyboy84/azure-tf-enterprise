@@ -88,3 +88,4 @@ jobs:
         with:
           GitHub_Token: ${{ secrets.GITHUB_TOKEN }}
           Out: terraform.tfplan
+          Variable_File: terraform.tfvars

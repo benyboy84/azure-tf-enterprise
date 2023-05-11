@@ -38,13 +38,14 @@ name: "Terraform - Pull Request"
 on:
   pull_request:
     branches: 
-      - '*'             # matches every branch that doesn't contain a '/'
-      - '*/*'           # matches every branch containing a single '/'
-      - '**'            # matches every branch
+      - '*'                         # matches every branch that doesn't contain a '/'
+      - '*/*'                       # matches every branch containing a single '/'
+      - '**'                        # matches every branch
     paths-ignore:
-      - '**.md'         # ignore documentation files
-      - '.gitignore'    # ignore .gitignore file
-      - '**/.github/workflows/**' # ignore workflows files
+      - '**.md'                     # ignore documentation files
+      - '.gitignore'                # ignore .gitignore file
+      - '.github/workflows/**.yml'  # ignore workflows files
+      - '.github/workflows/**.yaml' # ignore workflows files
 
 permissions:
   contents: read

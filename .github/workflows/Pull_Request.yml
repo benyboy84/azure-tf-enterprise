@@ -42,6 +42,7 @@ on:
       - '*/*'                    # matches every branch containing a single '/'
       - '**'                     # matches every branch
     paths:
+      - '**'
       - '!**.md'                 # ignore documentation files
       - '!.gitignore'            # ignore .gitignore file
       - '!.github/workflows/**'  # ignore workflows files

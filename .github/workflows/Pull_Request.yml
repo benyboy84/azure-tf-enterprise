@@ -44,7 +44,7 @@ on:
     paths-ignore:
       - '**.md'         # ignore documentation files
       - '.gitignore'    # ignore .gitignore file
-      - '*/workflows/*' # ignore workflows files
+      - '**/workflows/**' # ignore workflows files
 
 permissions:
   contents: read

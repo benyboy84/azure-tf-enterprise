@@ -1,4 +1,4 @@
 provider "azurerm" {
-    features {}
-    #subscription_id = ""
+  features {}
+  #subscription_id = ""
 }

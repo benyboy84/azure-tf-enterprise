@@ -24,25 +24,3 @@ locals {
     policy_set_definition = "Microsoft.Authorization/policySetDefinitions"
   }
 }
-
-# The following locals are used to control time_sleep
-# delays between resources to reduce transient errors
-# relating to replication delays in Azure
-locals {
-  create_duration_delay = {
-    after_azurerm_management_group      = var.create_duration_delay["azurerm_management_group"]
-    after_azurerm_policy_assignment     = var.create_duration_delay["azurerm_policy_assignment"]
-    after_azurerm_policy_definition     = var.create_duration_delay["azurerm_policy_definition"]
-    after_azurerm_policy_set_definition = var.create_duration_delay["azurerm_policy_set_definition"]
-    after_azurerm_role_assignment       = var.create_duration_delay["azurerm_role_assignment"]
-    after_azurerm_role_definition       = var.create_duration_delay["azurerm_role_definition"]
-  }
-  destroy_duration_delay = {
-    after_azurerm_management_group      = var.destroy_duration_delay["azurerm_management_group"]
-    after_azurerm_policy_assignment     = var.destroy_duration_delay["azurerm_policy_assignment"]
-    after_azurerm_policy_definition     = var.destroy_duration_delay["azurerm_policy_definition"]
-    after_azurerm_policy_set_definition = var.destroy_duration_delay["azurerm_policy_set_definition"]
-    after_azurerm_role_assignment       = var.destroy_duration_delay["azurerm_role_assignment"]
-    after_azurerm_role_definition       = var.destroy_duration_delay["azurerm_role_definition"]
-  }
-}

@@ -2,24 +2,24 @@
 root_parent_id = "0f9829d3-a628-4f2b-a3ac-58e0740d27ae"
 
 # Will set a custom Name (ID) value for the Enterprise-scale \"root\" Management Group, and append this to the ID for all core Enterprise-scale Management Groups."
-root_id = "mg-cti"
+root_id = "mg"
 
 # Will set a custom Display Name value for the Enterprise-scale \"root\" Management Group.
-root_name = "ConseilsTI"
+root_name = "Conseils TI"
 
 # Deploy additional Management Groups alongside Enterprise-scale core Management Groups.
 custom_landing_zones = {
-  "${local.root_id}-finance" = {
+  "mg-finance" = {
     display_name               = "Finance"
-    parent_management_group_id = "${local.root_id}-landing-zones"
+    parent_management_group_id = "mg-landing-zones"
   },
-  "${local.root_id}-finance-prod" = {
+  "mg-finance-prod" = {
     display_name               = "Finance Production"
-    parent_management_group_id = "${local.root_id}-finance"
+    parent_management_group_id = "mg-finance"
   },
-  "${local.root_id}-finance-nprod" = {
+  "mg-finance-nprod" = {
     display_name               = "Finance Non-Production"
-    parent_management_group_id = "${local.root_id}-finance"
+    parent_management_group_id = "mg-finance"
   },
 }
   

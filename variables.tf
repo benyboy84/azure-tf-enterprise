@@ -25,7 +25,6 @@ variable "root_id" {
 variable "root_name" {
   type        = string
   description = "If specified, will set a custom Display Name value for the Enterprise-scale \"root\" Management Group."
-  default     = "Enterprise-Scale"
 
   validation {
     condition     = can(regex("^[A-Za-z][A-Za-z0-9- ._]{1,22}[A-Za-z0-9]?$", var.root_name))

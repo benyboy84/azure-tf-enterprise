@@ -7,31 +7,31 @@ landing_zones = {
   },
   "mg-decommissioned" = {
     display_name               = "Decommissioned"
-    parent_management_group_id = local.root_id
+    parent_management_group_id = "mg"
   },
   "mg-sandboxes" = {
     display_name               = "Sandboxes"
-    parent_management_group_id = local.root_id
+    parent_management_group_id = "mg"
   },
   "mg-landing-zones" = {
     display_name               = "Landing Zones"
-    parent_management_group_id = local.root_id
+    parent_management_group_id = "mg"
   },
   "mg-platform" = {
     display_name               = "Platform"
-    parent_management_group_id = local.root_id
+    parent_management_group_id = "mg"
   },
   "mg-connectivity" = {
     display_name               = "Connectivity"
-    parent_management_group_id = "${local.root_id}-platform"
+    parent_management_group_id = "mg-platform"
   },
   "mg-management" = {
     display_name               = "Management"
-    parent_management_group_id = "${local.root_id}-platform"
+    parent_management_group_id = "mg-platform"
   },
   "mg-identity" = {
     display_name               = "Identity"
-    parent_management_group_id = "${local.root_id}-platform"
+    parent_management_group_id = "mg-platform"
   },
   # Deploy additional Management Groups alongside Enterprise-scale core Management Groups.
   "mg-finance" = {

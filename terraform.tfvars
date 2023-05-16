@@ -1,39 +1,14 @@
-landing_zones = {
+# The root_parent_id is used to specify where to set the root for all Landing Zone deployments. Usually the Tenant ID when deploying the core Enterprise-scale Landing Zones.
+root_parent_id = "0f9829d3-a628-4f2b-a3ac-58e0740d27ae"
 
-  # Mandatory core Enterprise-scale Management Groups
-  mg = {
-    display_name               = "Conseils TI"
-    parent_management_group_id = "0f9829d3-a628-4f2b-a3ac-58e0740d27ae" # The root_parent_id is used to specify where to set the root for all Landing Zone deployments. Usually the Tenant ID when deploying the core Enterprise-scale Landing Zones.
-  },
-  "mg-decommissioned" = {
-    display_name               = "Decommissioned"
-    parent_management_group_id = "mg"
-  },
-  "mg-sandboxes" = {
-    display_name               = "Sandboxes"
-    parent_management_group_id = "mg"
-  },
-  "mg-landing-zones" = {
-    display_name               = "Landing Zones"
-    parent_management_group_id = "mg"
-  },
-  "mg-platform" = {
-    display_name               = "Platform"
-    parent_management_group_id = "mg"
-  },
-  "mg-connectivity" = {
-    display_name               = "Connectivity"
-    parent_management_group_id = "mg-platform"
-  },
-  "mg-management" = {
-    display_name               = "Management"
-    parent_management_group_id = "mg-platform"
-  },
-  "mg-identity" = {
-    display_name               = "Identity"
-    parent_management_group_id = "mg-platform"
-  },
-  # Deploy additional Management Groups alongside Enterprise-scale core Management Groups.
+# Will set a custom Name (ID) value for the Enterprise-scale \"root\" Management Group, and append this to the ID for all core Enterprise-scale Management Groups."
+root_id = "mg"
+
+# Will set a custom Display Name value for the Enterprise-scale \"root\" Management Group.
+root_name = "Conseils TI"
+
+# Deploy additional Management Groups alongside Enterprise-scale core Management Groups.
+custom_landing_zones = {
   "mg-finance" = {
     display_name               = "Finance"
     parent_management_group_id = "mg-landing-zones"
@@ -47,4 +22,3 @@ landing_zones = {
     parent_management_group_id = "mg-finance"
   },
 }
-  

@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   terraform-docs:
-  name: "Generate terraform docs"
+    name: "Generate terraform docs"
     runs-on: ubuntu-latest
     steps:
 

@@ -74,7 +74,6 @@ jobs:
         id: fmt
         uses: benyboy84/GitHubAction_terraform-fmt@v1
         with:
-          Github_Token: ${{ secrets.GITHUB_TOKEN }}
           Recursive: true
           Comment: true
 

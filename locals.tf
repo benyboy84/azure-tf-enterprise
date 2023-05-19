@@ -7,7 +7,7 @@ locals {
   root_id = "mg"
 
   # Will set a custom Display Name value for the Enterprise-scale \"root\" Management Group.
-  root_name      = "Conseils TI"
+  root_name = "Conseils TI"
 
   # Mandatory core Enterprise-scale Management Groups
   es_core_landing_zones = {

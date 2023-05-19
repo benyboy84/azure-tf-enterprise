@@ -9,7 +9,7 @@ resource "azurerm_management_group" "level_1" {
   name                       = each.value.id
   display_name               = each.value.display_name
   parent_management_group_id = "${local.provider_path.management_groups}${each.value.parent_management_group_id}"
-  
+
 }
 
 resource "azurerm_management_group" "level_2" {
@@ -40,7 +40,7 @@ resource "azurerm_management_group" "level_4" {
   name                       = each.value.id
   display_name               = each.value.display_name
   parent_management_group_id = "${local.provider_path.management_groups}${each.value.parent_management_group_id}"
-  
+
   depends_on = [azurerm_management_group.level_3]
 
 }
@@ -51,7 +51,7 @@ resource "azurerm_management_group" "level_5" {
   name                       = each.value.id
   display_name               = each.value.display_name
   parent_management_group_id = "${local.provider_path.management_groups}${each.value.parent_management_group_id}"
-  
+
   depends_on = [azurerm_management_group.level_4]
 
 }
@@ -62,7 +62,7 @@ resource "azurerm_management_group" "level_6" {
   name                       = each.value.id
   display_name               = each.value.display_name
   parent_management_group_id = "${local.provider_path.management_groups}${each.value.parent_management_group_id}"
-  
+
   depends_on = [azurerm_management_group.level_5]
 
 }

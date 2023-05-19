@@ -17,7 +17,6 @@ This is currently split logically into the following capabilities (*links to fur
 | Poliicies and Policies Assignments |
 
 ## Documentation
-<!-- markdownlint-disable MD033 -->
 
 == Requirements
 
@@ -32,8 +31,6 @@ This is currently split logically into the following capabilities (*links to fur
 
 No modules.
 
-<!-- markdownlint-disable MD013 -->
-<!-- markdownlint-disable MD034 -->
 == Inputs
 
 [cols="a,a,a,a,a",options="header,autowidth"]
@@ -116,6 +113,5 @@ terraform
 |[[output_azurerm_management_group]] <<output_azurerm_management_group,azurerm_management_group>> |Returns the configuration data for all Management Groups created by this module.
 |===
 
-<!-- markdownlint-enable -->
 
 <!-- END_TF_DOCS -->

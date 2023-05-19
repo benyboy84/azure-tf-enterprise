@@ -1,6 +1,11 @@
 name: Generate terraform docs
+
 on:
-  - pull_request
+  pull_request:
+    branches: 
+      - '*'                      # matches every branch that doesn't contain a '/'
+      - '*/*'                    # matches every branch containing a single '/'
+      - '**'                     # matches every branch
 
 permissions:
   contents: read
@@ -12,7 +17,7 @@ jobs:
   name: "Generate terraform docs"
     runs-on: ubuntu-latest
     steps:
-    
+
     - uses: actions/checkout@v3
       with:
         ref: ${{ github.event.pull_request.head.ref }}

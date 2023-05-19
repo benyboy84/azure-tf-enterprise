@@ -15,9 +15,7 @@ on:
       - '**'                     # matches every branch
 
 permissions:
-  contents: read
-  pull-requests: write
-  statuses: write  
+  contents: write
 
 jobs:
   build:

@@ -25,6 +25,7 @@ jobs:
       with:
         config-file: .tfdocs-config.yml
         git-push: "true"
+        output-format: "asciidoc"
         working-dir: .
         output-file: README.md
         output-method: inject

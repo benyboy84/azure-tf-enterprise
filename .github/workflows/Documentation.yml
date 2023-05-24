@@ -1,8 +1,9 @@
+---
 name: Terraform Docs - Generate
 
 on:
   pull_request:
-    branches: 
+    branches:
       - '*'                      # matches every branch that doesn't contain a '/'
       - '*/*'                    # matches every branch containing a single '/'
       - '**'                     # matches every branch
@@ -16,15 +17,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - uses: actions/checkout@v3
-      with:
-        ref: ${{ github.event.pull_request.head.ref }}
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
 
-    - name: Render terraform docs inside the README.md and push changes back to PR branch
-      uses: terraform-docs/gh-actions@v1.0.0
-      with:
-        config-file: .tfdocs-config.yml
-        git-push: "true"
-        output-format: "markdown document"
-        working-dir: .
-        
+      - name: Render terraform docs inside the README.md and push changes back to PR branch
+        uses: terraform-docs/gh-actions@v1.0.0
+        with:
+          config-file: .tfdocs-config.yml
+          git-push: "true"
+          output-format: "markdown document"
+          working-dir: .

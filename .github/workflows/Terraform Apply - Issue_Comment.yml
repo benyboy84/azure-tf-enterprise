@@ -32,7 +32,7 @@
 #       with:
 #         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
-name: Terraform Apply - Issue_Comment
+name: "Terraform - Apply - Issue_Comment"
 
 on:  # yamllint disable-line rule:truthy
   issue_comment:

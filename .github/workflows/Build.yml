@@ -1,7 +1,7 @@
 ---
-# This workflow run two job on `pull_request`.
+# This workflow run a job on `pull_request`.
 #
-# `Lint code base` job use GitHub Action `super-linter/super-linter` to run acombination of various linters, 
+# `Lint code base` job use GitHub Action `super-linter/super-linter` to run acombination of various linters,
 # written in bash, to help validate your source code.
 #   Documentation
 #     - https://github.com/marketplace/actions/super-linter

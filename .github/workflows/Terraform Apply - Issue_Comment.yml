@@ -1,7 +1,7 @@
 ---
 # This workflow installs the latest version of Terraform CLI and configures the Terraform CLI configuration file
 # with an API token for Terraform Cloud (app.terraform.io) - if required. On issue comment, if the comment is `terraform apply`,
-# this workflow will use the GitHub Action `GitHubAction_terraform-plan` to run `terraform plan` (speculative plan via Terraform Cloud) 
+# this workflow will use the GitHub Action `GitHubAction_terraform-plan` to run `terraform plan` (speculative plan via Terraform Cloud)
 # and use the the GitHub Action `GitHubAction_terraform-apply` and run `terraform apply`.
 #   Documentation
 #     - https://github.com/benyboy84/GitHubAction_terraform-plan
@@ -49,7 +49,7 @@ jobs:
       ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}       # Can be configured in Terraform Cloud
       ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}               # Can be configured in Terraform Cloud
     steps:
-    
+
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -67,7 +67,7 @@ jobs:
       - name: Terraform Init
         id: init
         run: terraform init
-        
+
       - name: Terraform Plan
         id: plan
         uses: benyboy84/GitHubAction_terraform-plan@v1.0.0

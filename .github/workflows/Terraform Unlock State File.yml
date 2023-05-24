@@ -1,3 +1,4 @@
+---
 # This workflow installs the latest version of Terraform CLI and configures the Terraform CLI configuration file
 # with an API token for Terraform Cloud (app.terraform.io) - if required. 
 # This workflow is manually triggered.
@@ -34,7 +35,7 @@
 
 name: "Terraform - Unlock State File"
 
-on:
+on:  # yamllint disable-line rule:truthy
   workflow_dispatch:
     inputs:
       lock_id:
@@ -81,4 +82,4 @@ jobs:
 
       - name: Terraform Unlock
         id: unlock
-        run: terraform force-unlock -force ${{ github.event.inputs.lock_id }} 
+        run: terraform force-unlock -force ${{ github.event.inputs.lock_id }}

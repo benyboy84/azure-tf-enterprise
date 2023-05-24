@@ -1,4 +1,10 @@
 ---
+# This workflow run a job on `pull_request`.
+#
+# `Terraform Docs - Generate` job use GitHub Action `terraform-docs/gh-actions` to create README.md file.
+#   Documentation
+#     - https://github.com/marketplace/actions/terraform-docs-gh-actions
+
 name: Terraform Docs - Generate
 
 on:  # yamllint disable-line rule:truthy

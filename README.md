@@ -17,6 +17,7 @@ This is currently split logically into the following capabilities (*links to fur
 | Poliicies and Policies Assignments |
 
 ## Documentation
+<!-- markdownlint-disable MD033 -->
 
 ## Requirements
 
@@ -30,6 +31,8 @@ The following requirements are needed by this module:
 
 No modules.
 
+<!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD034 -->
 ## Required Inputs
 
 No required inputs.
@@ -108,5 +111,6 @@ The following outputs are exported:
 
 Description: Returns the configuration data for all Management Groups created by this module.
 
+<!-- markdownlint-enable -->
 
 <!-- END_TF_DOCS -->

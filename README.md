@@ -19,12 +19,6 @@ This is currently split logically into the following capabilities (*links to fur
 | [Service Principale and Role based Access](https://github.com/benyboy84/azure-tf-enterprise/wiki) |
 | [Policies and Policies Assignments](https://github.com/benyboy84/azure-tf-enterprise/wiki) |
 
-<!-- markdownlint-disable MD013 -->
-<!-- markdownlint-disable MD031 -->
-<!-- markdownlint-disable MD032 -->
-<!-- markdownlint-disable MD033 -->
-<!-- markdownlint-disable MD034 -->
-
 ## Documentation
 
 ## Requirements

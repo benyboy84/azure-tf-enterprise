@@ -1,6 +1,3 @@
-# azure-tf-enterprise
-Management Groups, Policies, Subscription, Identity Service, Management Service...
-
 <!-- BEGIN_TF_DOCS -->
 # Azure landing zones Terraform
 

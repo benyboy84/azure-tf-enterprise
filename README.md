@@ -1,7 +1,7 @@
 <!-- BEGIN_TF_DOCS -->
 # Azure landing zones Terraform - Level 1
 
-[![GitHub Super-Linter](https://github.com/benyboy84/azure-tf-enterprise/blob/ft_management_groups/actions/workflows/build/badge.svg)](https://github.com/marketplace/actions/super-linter)
+[![GitHub Super-Linter](https://github.com/benyboy84/azure-tf-enterprise/blob/ft_management_groups/.github/workflows/build/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
 ## Overview
 

@@ -19,7 +19,6 @@
 # - ARM_CLIENT_ID
 # - ARM_CLIENT_SECRET
 # - ARM_SUBSCRIPTION_ID
-# - ARM_TENANT_ID
 #
 # Terraform Cloud user API token stored as a GitHub secret (e.g. TF_API_TOKEN) in the repository.
 #   Documentation:

@@ -1,3 +1,4 @@
+---
 # This workflow installs the latest version of Terraform CLI and configures the Terraform CLI configuration file
 # with an API token for Terraform Cloud (app.terraform.io) - if required. On issue comment, if the comment is `terraform apply`,
 # this workflow will use the GitHub Action `GitHubAction_terraform-plan` to run `terraform plan` (speculative plan via Terraform Cloud) 
@@ -33,7 +34,7 @@
 
 name: Terraform Apply - Issue_Comment
 
-on:
+on:  # yamllint disable-line rule:truthy
   issue_comment:
     types: created
 

@@ -1,3 +1,4 @@
+---
 # This workflow run on `pull_request`.
 # `Terraform` job installs the latest version of Terraform CLI and configures the Terraform CLI configuration file
 # with an API token for Terraform Cloud (app.terraform.io) - if required. It use the GitHub Action `GitHubAction_terraform-fmt` 
@@ -35,7 +36,7 @@
 
 name: "Terraform - Pull Request"
 
-on:
+on:  # yamllint disable-line rule:truthy
   pull_request:
     branches: 
       - '*'                      # matches every branch that doesn't contain a '/'

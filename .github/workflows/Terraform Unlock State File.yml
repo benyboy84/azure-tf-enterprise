@@ -1,13 +1,13 @@
 ---
 # This workflow installs the latest version of Terraform CLI and configures the Terraform CLI configuration file
-# with an API token for Terraform Cloud (app.terraform.io) - if required. 
+# with an API token for Terraform Cloud (app.terraform.io) - if required.
 # This workflow is manually triggered.
 # It will use `checkout` to download the content of the repository and then, run `terraform init` to initialize
 # the directory to finally run `terraforn force-unlock` with the `ID` supplied as an input to unlock the state
 # file.
 #   Documentation
 #     - https://github.com/actions/checkout
-# 
+#
 # Prerequisites:
 # - An Azure account and Azure Access Credentials
 #

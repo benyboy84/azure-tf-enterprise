@@ -25,6 +25,6 @@ jobs:
       with:
         config-file: .tfdocs-config.yml
         git-push: "true"
-        output-format: "markdown_document"
+        output-format: "markdown document"
         working-dir: .
         

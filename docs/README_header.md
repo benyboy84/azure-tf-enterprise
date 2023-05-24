@@ -14,6 +14,6 @@ This is currently split logically into the following capabilities (*links to fur
 
 | Scope |
 | :--- |
-| [Management group and Subscriptions](https://github.com/benyboy84/azure-tf-enterprise/wiki/Management-Groups) |
+| [Management group and Subscriptions](https://github.com/benyboy84/azure-tf-enterprise/wiki/Management-Groups-&-Management-group-and-Subscriptions) |
 | [Service Principale and Role based Access]() |
 | [Policies and Policies Assignments]() |

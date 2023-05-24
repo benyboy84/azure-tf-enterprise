@@ -3,8 +3,8 @@ formatter: "markdown document"  # this is required
 
 version: "0.16.0"
 
-header-from: "_README_header.md"
-footer-from: "_README_footer.md"
+header-from: "README_header.md"
+footer-from: "README_footer.md"
 
 recursive:
   enabled: false

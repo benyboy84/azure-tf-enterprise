@@ -24,7 +24,7 @@ jobs:
       - name: Render terraform docs inside the README.md and push changes back to PR branch
         uses: terraform-docs/gh-actions@v1.0.0
         with:
-          config-file: .tfdocs-config.yml
+          config-file: ./terraform-docs/.tfdocs-config.yml
           git-push: "true"
           output-format: "markdown document"
           working-dir: .

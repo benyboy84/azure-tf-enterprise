@@ -3,7 +3,7 @@
 ### Execute this command in the Terraform module's code folder:
 # terraform-docs -c .tfdocs-config.yml .
 
-formatter: "asciidoc"  # this is required
+formatter: "markdown_document"  # this is required
 
 version: "0.16.0"
 

@@ -1,12 +1,14 @@
 ---
-# This workflow run a job on `pull_request`.
+# This workflow runs on `pull_request`.
 #
-# `Lint code base` job use GitHub Action `super-linter/super-linter` to run acombination of various linters,
-# written in bash, to help validate your source code.
-#   Documentation
-#     - https://github.com/marketplace/actions/super-linter
+# `Lint code base` job uses `checkout` to download the content of the repository. It uses GitHub Action
+# `super-linter/super-linter` to run a combination of various linters, written in bash, to help validate
+# your source code.
+#
+# Documentation
+# - https://github.com/marketplace/actions/super-linter
 
-name: "Lint Code Base - Pull Request"
+name: "Lint Code Base"
 
 on:  # yamllint disable-line rule:truthy
   pull_request:

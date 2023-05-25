@@ -39,6 +39,7 @@ on:  # yamllint disable-line rule:truthy
       branch:
         description: Branch to deploy
         required: true
+        type: branch
       runner:
         description: Label of the runner to use.
         required: false

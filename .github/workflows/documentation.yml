@@ -1,4 +1,3 @@
----
 # This workflow runs on `pull_request`.
 #
 # `Terraform Docs`job uses `checkout` to download the content of the repository. It uses
@@ -8,7 +7,7 @@
 # - https://github.com/actions/checkout
 # - https://github.com/marketplace/actions/terraform-docs-gh-actions
 
-name: "Terraform Docs"
+name: Terraform Docs
 
 on:  # yamllint disable-line rule:truthy
   pull_request:
@@ -22,7 +21,7 @@ permissions:
 
 jobs:
   terraform-docs:
-    name: "Terraform Docs"
+    name: Terraform Docs
     runs-on: ubuntu-latest
     steps:
 
@@ -34,6 +33,6 @@ jobs:
         uses: terraform-docs/gh-actions@v1.0.0
         with:
           config-file: .github/terraform-docs/.tfdocs-config.yml
-          git-push: "true"
-          output-format: "markdown document"
+          git-push: true
+          output-format: markdown document
           working-dir: .

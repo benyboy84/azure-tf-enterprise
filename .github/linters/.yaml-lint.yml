@@ -4,7 +4,6 @@ rules:
   anchors:
     forbid-undeclared-aliases: true
     forbid-duplicated-anchors: false
-    forbid-unused-anchors: false
   braces:
     forbid: false
     min-spaces-inside: 0

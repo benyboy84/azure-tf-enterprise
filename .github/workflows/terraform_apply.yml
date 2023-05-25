@@ -36,10 +36,6 @@ name: Terraform - Apply
 on:  # yamllint disable-line rule:truthy
   workflow_dispatch:
     inputs:
-      branch:
-        description: Branch to deploy
-        required: true
-        type: branch
       runner:
         description: Label of the runner to use.
         required: false
@@ -61,9 +57,7 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.inputs.branch }}
+        uses: actions/checkout@v3}
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2

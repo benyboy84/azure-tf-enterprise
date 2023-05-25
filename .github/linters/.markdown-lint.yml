@@ -21,8 +21,8 @@ MD001: true
 
 # MD002/first-heading-h1/first-header-h1 - First heading should be a top-level heading
 # MD002:
-  # Heading level
-  # level: 1
+#  Heading level
+#  level: 1
 
 # MD003/heading-style/header-style - Heading style
 MD003:
@@ -216,12 +216,12 @@ MD042: true
 
 # MD043/required-headings/required-headers - Required heading structure
 # MD043:
-  # List of headings
-    # headings: []
-  # List of headings
-    # headers: []
-  # Match case of headings
-    # match_case: false
+#  List of headings
+#     headings: []
+#  List of headings
+#     headers: []
+#  Match case of headings
+#    match_case: false
 
 # MD044/proper-names - Proper names should have the correct capitalization
 MD044:

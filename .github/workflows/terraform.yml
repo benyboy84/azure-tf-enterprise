@@ -1,5 +1,5 @@
 ---
-# This workflow run on `pull_request`.
+# This workflow runs on `pull_request`.
 #
 # `Terraform` job use `checkout` to download the content of the repository. It installs the latest version of Terraform CLI
 # and configures the Terraform CLI configuration file with an API token for Terraform Cloud (app.terraform.io). It use the

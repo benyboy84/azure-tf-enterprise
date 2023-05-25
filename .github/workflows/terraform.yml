@@ -3,7 +3,7 @@
 #
 # `Terraform` job uses `checkout` to download the content of the repository. It installs the latest version of Terraform CLI
 # and configures the Terraform CLI configuration file with an API token for Terraform Cloud (app.terraform.io). It runs `terraform init`
-# to initialize the director. It uses the GitHub Action `GitHubAction_terraform-fmt` to run `terraform fmt`, `GitHubAction_terraform-validate` 
+# to initialize the director. It uses the GitHub Action `GitHubAction_terraform-fmt` to run `terraform fmt`, `GitHubAction_terraform-validate`
 # to run `terraform validate` and `GitHubAction_terraform-plan` to run `terraform plan`.
 #
 # Documentation

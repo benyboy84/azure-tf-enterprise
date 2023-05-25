@@ -1,24 +1,22 @@
 ---
-# This workflow installs the latest version of Terraform CLI and configures the Terraform CLI configuration file
-# with an API token for Terraform Cloud (app.terraform.io) - if required.
-# This workflow is manually triggered.
-# It will use `checkout` to download the content of the repository and then, run `terraform init` to initialize
-# the directory to finally run `terraforn force-unlock` with the `ID` supplied as an input to unlock the state
-# file.
-#   Documentation
-#     - https://github.com/actions/checkout
+# This workflow runs manually.
+#
+# `Terraform Unlock` job uses `checkout` to download the content of the repository. It installs the latest version of Terraform CLI
+# and configures the Terraform CLI configuration file with an API token for Terraform Cloud (app.terraform.io). It runs `terraform init`
+# to initialize the directory to finally run `terraforn force-unlock` with the `ID` supplied as an input to unlock the state file.
+#
+# Documentation
+# - https://github.com/actions/checkout
 #
 # Prerequisites:
 # - An Azure account and Azure Access Credentials
-#
-# Opional:
 # - A Terraform Cloud account
 #
 # "API-driven workflow" Workspace.
 # Environment Variables for your workspace with their respective values.
 # - ARM_CLIENT_ID
 # - ARM_CLIENT_SECRET
-# - ARM_SUBSCRIPTION_ID
+# - ARM_TENANT_ID
 #
 # Terraform Cloud user API token stored as a GitHub secret (e.g. TF_API_TOKEN) in the repository.
 #   Documentation:
@@ -52,12 +50,12 @@ permissions:
 
 jobs:
   terraform-unlock:
-    name: Terraform Unlock
+    name: "Terraform Unlock"
     runs-on: ${{ github.event.inputs.runner}}
     env:
-      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}               # Can be configured in Terraform Cloud
-      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}       # Can be configured in Terraform Cloud
-      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}               # Can be configured in Terraform Cloud
+      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
     steps:
 
       - name: Checkout

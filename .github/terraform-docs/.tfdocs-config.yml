@@ -1,10 +1,9 @@
----
-formatter: "markdown document"  # this is required
+formatter: markdown document  # this is required
 
-version: "0.16.0"
+version: 0.16.0
 
-header-from: "docs/README_header.md"
-footer-from: "docs/README_footer.md"
+header-from: docs/README_header.md
+footer-from: docs/README_footer.md
 
 recursive:
   enabled: false

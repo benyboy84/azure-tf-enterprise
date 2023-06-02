@@ -74,11 +74,6 @@ locals {
   empty_string = ""
 }
 
-# The following locals are used to convert provided input variables to locals before use elsewhere in the module
-locals {
-  custom_landing_zones = var.custom_landing_zones
-}
-
 # The following locals are used to define base Azure
 # provider paths and resource types
 locals {

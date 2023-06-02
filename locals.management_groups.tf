@@ -4,8 +4,7 @@ locals {
 
   # Local map containing all Management Groups to deploy
   es_landing_zones_merge = merge(
-    local.es_core_landing_zones,
-    local.custom_landing_zones,
+    local.es_core_landing_zones
   )
 
   # Logic to auto-generate values for Management Groups if needed.

@@ -31,6 +31,21 @@ locals {
       parent_management_group_id = local.root_id
       # subscription_name        = name
     }
+    "${local.root_id}-corp" = {
+      display_name               = "Corp"
+      parent_management_group_id = "mg-landing-zones"
+      # subscription_name        = name
+    },
+    "${local.root_id}-online" = {
+      display_name               = "Online"
+      parent_management_group_id = "mg-landing-zones"
+      # subscription_name        = name
+    },
+    "${local.root_id}-pci" = {
+      display_name               = "PCI"
+      parent_management_group_id = "mg-landing-zones"
+      # subscription_name        = name
+    },
     "${local.root_id}-platform" = {
       display_name               = "Platform"
       parent_management_group_id = local.root_id

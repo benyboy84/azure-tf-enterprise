@@ -14,42 +14,34 @@ locals {
     (local.root_id) = {
       display_name               = local.root_name
       parent_management_group_id = local.root_parent_id
-      # subscription_name        = name
     }
     "${local.root_id}-decommissioned" = {
       display_name               = "Decommissioned"
       parent_management_group_id = local.root_id
-      # subscription_name        = name
     }
     "${local.root_id}-sandboxes" = {
       display_name               = "Sandboxes"
       parent_management_group_id = local.root_id
-      # subscription_name        = name
     }
     "${local.root_id}-landing-zones" = {
-      display_name               = "Landing Zones"
+      display_name               = "Landing Zone"
       parent_management_group_id = local.root_id
-      # subscription_name        = name
     }
     "${local.root_id}-corp" = {
       display_name               = "Corp"
       parent_management_group_id = "${local.root_id}-landing-zones"
-      # subscription_name        = name
     },
     "${local.root_id}-online" = {
       display_name               = "Online"
       parent_management_group_id = "${local.root_id}-landing-zones"
-      # subscription_name        = name
     },
     "${local.root_id}-pci" = {
       display_name               = "PCI"
       parent_management_group_id = "${local.root_id}-landing-zones"
-      # subscription_name        = name
     },
     "${local.root_id}-platform" = {
       display_name               = "Platform"
       parent_management_group_id = local.root_id
-      # subscription_name        = name
     }
     "${local.root_id}-connectivity" = {
       display_name               = "Connectivity"
@@ -79,6 +71,5 @@ locals {
 locals {
   provider_path = {
     management_groups = "/providers/Microsoft.Management/managementGroups/"
-    role_assignment   = "/providers/Microsoft.Authorization/roleAssignments/"
   }
 }

@@ -24,12 +24,12 @@ locals {
       parent_management_group_id = local.root_id
     }
     "${local.root_id}-landing-zones" = {
-      display_name               = "Landing Zones"
+      display_name               = "Landing Zon"
       parent_management_group_id = local.root_id
     }
     "${local.root_id}-corp" = {
       display_name               = "Corp"
-      parent_management_group_id = "${local.root_id}-landing-zon"
+      parent_management_group_id = "${local.root_id}-landing-zones"
     },
     "${local.root_id}-online" = {
       display_name               = "Online"

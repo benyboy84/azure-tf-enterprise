@@ -1,9 +1,20 @@
-# The GitHub Actions docs (https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#on)
-# describe other options for 'on', 'pull_request' is a good default.
+# This workflow runs on `pull_request`.
+#
+# `Infracost` job uses `checkout` to download the content of the base branch of the pull request. It generate Infracost 
+# JSON file as the baseline. It uses `checkout` to download the content of the current branch. It generate an Infracost 
+# diff and save it to a JSON file. It creates a comment in the pull request with the result.
+#
+# Documentation
+# - https://github.com/infracost/actions
 
 name: "Infracost"
 
-on: [pull_request]
+on:  # yamllint disable-line rule:truthy
+  pull_request:
+    branches:
+      - '*'                      # matches every branch that doesn't contain a '/'
+      - '*/*'                    # matches every branch containing a single '/'
+      - '**'                     # matches every branch
 
 jobs:
   infracost:

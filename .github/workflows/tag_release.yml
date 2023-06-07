@@ -22,3 +22,4 @@ jobs:
           bump_version_scheme: patch
           tag_prefix: v
           release_body: "test"
+          max_commits: 0

@@ -1,0 +1,22 @@
+on: 
+  push:
+#    branches:
+#      - master
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  tag:
+    name: Tag
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+
+      - uses: rymndhng/release-on-push-action@master
+        with:
+          bump_version_scheme: minor
+          tag_prefix: v
+          release_body: github.event.pull_request.body

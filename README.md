@@ -61,7 +61,7 @@ The following outputs are exported:
 
 ### <a name="output_azurerm_management_group"></a> [azurerm\_management\_group](#output\_azurerm\_management\_group)
 
-Description: Returns the configuration data for all Management Groups created by this module.
+Description: Returns the configuration data for all Management Groups created.
 
 <!-- markdownlint-enable -->
 ## References
@@ -70,5 +70,4 @@ Description: Returns the configuration data for all Management Groups created by
 ###### 2. [Management groups](https://learn.microsoft.com/en-us/azure/governance/management-groups/overview)
 ###### 3. [Cloud Adoption Framework - Levels Hierarchy](https://aztfmod.github.io/documentation/docs/fundamentals/lz-intro/)
 ###### 4. [Azure Provider: Authenticating using a Service Principal with a Client Secret](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/service_principal_client_secret)
-###### 5. []() SPN role assignment
 <!-- END_TF_DOCS -->

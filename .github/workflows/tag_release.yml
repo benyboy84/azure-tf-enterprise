@@ -6,7 +6,7 @@ on:  # yamllint disable-line rule:truthy
       - '*'                      # matches every branch that doesn't contain a '/'
       - '*/*'                    # matches every branch containing a single '/'
       - '**'                     # matches every branch
-    types: [closed]
+#    types: [closed]
 
 permissions:
   contents: write

@@ -1,3 +1,10 @@
+# This workflow runs on `pull_request` `closed`.
+#
+# `Tag version` job uses `rymndhng/release-on-push-action` to create a release with sementic version.
+#
+# Documentation
+# - https://github.com/rymndhng/release-on-push-action
+
 name: Tag version
 
 on:  # yamllint disable-line rule:truthy
@@ -6,7 +13,7 @@ on:  # yamllint disable-line rule:truthy
       - '*'                      # matches every branch that doesn't contain a '/'
       - '*/*'                    # matches every branch containing a single '/'
       - '**'                     # matches every branch
-#    types: [closed]
+    types: [closed]
 
 permissions:
   contents: write

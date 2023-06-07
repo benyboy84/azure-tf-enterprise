@@ -1,22 +1,22 @@
-# This workflow installs the latest version of Terraform CLI and configures the Terraform CLI configuration file
-# with an API token for Terraform Cloud (app.terraform.io) - if required. On issue comment, if the comment is `terraform apply`,
-# this workflow will use the GitHub Action `GitHubAction_terraform-plan` to run `terraform plan` (speculative plan via Terraform Cloud) 
-# and use the the GitHub Action `GitHubAction_terraform-apply` and run `terraform apply`.
-#   Documentation
-#     - https://github.com/benyboy84/GitHubAction_terraform-plan
-#     - https://github.com/benyboy84/GitHubAction_terraform-apply
+# This workflow runs manually.
+#
+# `Terraform - Apply` job uses `checkout` to download the content of the repository. It installs the latest version of Terraform CLI
+# and configures the Terraform CLI configuration file with an API token for Terraform Cloud (app.terraform.io). It runs `terraform init`
+# to initialize the directory. It uses the GitHub Action `GitHubAction_terraform-plan` to run `terraform plan` and use the the
+# GitHub Action `GitHubAction_terraform-apply` and run `terraform apply`.
+#
+# Documentation
+# - https://github.com/actions/checkout
+# - https://github.com/benyboy84/GitHubAction_terraform-plan
+# - https://github.com/benyboy84/GitHubAction_terraform-apply
 #
 # Prerequisites:
 # - An Azure account and Azure Access Credentials
-#
-# Opional:
 # - A Terraform Cloud account
 #
-# "API-driven workflow" Workspace.
 # Environment Variables for your workspace with their respective values.
 # - ARM_CLIENT_ID
 # - ARM_CLIENT_SECRET
-# - ARM_SUBSCRIPTION_ID
 # - ARM_TENANT_ID
 #
 # Terraform Cloud user API token stored as a GitHub secret (e.g. TF_API_TOKEN) in the repository.
@@ -31,31 +31,33 @@
 #       with:
 #         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
-name: Terraform Apply - Issue_Comment
+name: Terraform - Apply
 
-on:
-  issue_comment:
-    types: created
+on:  # yamllint disable-line rule:truthy
+  workflow_dispatch:
+    inputs:
+      runner:
+        description: Label of the runner to use.
+        required: false
+        default: ubuntu-latest
+        type: string
+
+permissions:
+  contents: read
+  pull-requests: write
 
 jobs:
   terraform-apply:
-    if: ${{ contains(github.event.comment.body, 'terraform apply') }}
-    # if: ${{ !github.event.comment && github.event.issue.pull_request && contains(github.event.comment.body, 'terraform apply') }}
-    name: Terraform Apply - Comment
+    name: Terraform Apply
     runs-on: ubuntu-latest
     env:
-      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}               # Can be configured in Terraform Cloud
-      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}       # Can be configured in Terraform Cloud
-      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}               # Can be configured in Terraform Cloud
+      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
     steps:
-    
+
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Checkout Pull Request
-        run: hub pr checkout ${{ github.event.issue.number }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
@@ -66,7 +68,7 @@ jobs:
       - name: Terraform Init
         id: init
         run: terraform init
-        
+
       - name: Terraform Plan
         id: plan
         uses: benyboy84/GitHubAction_terraform-plan@v1.0.0

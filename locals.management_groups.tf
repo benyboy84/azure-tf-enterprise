@@ -2,16 +2,11 @@
 # logic to determine the full Management Group deployment hierarchy.
 locals {
 
-  # Local map containing all Management Groups to deploy
-  es_landing_zones_merge = merge(
-    local.es_core_landing_zones
-  )
-
   # Logic to auto-generate values for Management Groups if needed.
   # Allows the user to specify the Management Group ID when working with existing
   # Management Groups, or uses standard naming pattern if set to null.
   es_landing_zones_map = {
-    for key, value in local.es_landing_zones_merge :
+    for key, value in local.es_core_landing_zones :
     "${local.provider_path.management_groups}${key}" => {
       id                         = key
       display_name               = value.display_name

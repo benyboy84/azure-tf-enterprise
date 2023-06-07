@@ -1,5 +1,3 @@
-# The following output is used to ensure all Management Group
-# data is returned to the root module.
 output "azurerm_management_group" {
   value = {
     level_1 = azurerm_management_group.level_1
@@ -9,5 +7,5 @@ output "azurerm_management_group" {
     level_5 = azurerm_management_group.level_5
     level_6 = azurerm_management_group.level_6
   }
-  description = "Returns the configuration data for all Management Groups created by this module."
+  description = "Returns the configuration data for all Management Groups created."
 }

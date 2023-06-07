@@ -41,7 +41,7 @@ locals {
     },
     "${local.root_id}-platform" = {
       display_name               = "Platform"
-      parent_management_group_id = "${local.root_id}-landing-zones"
+      parent_management_group_id = local.root_id
     }
     "${local.root_id}-connectivity" = {
       display_name               = "Connectivity"
